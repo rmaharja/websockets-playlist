@@ -9,10 +9,12 @@ var message = document.getElementById('message'),
 
 // Emit events
 btn.addEventListener('click', function(){
+  // socket.emit takes 2 params: name of data & actual data
   socket.emit('chat', {
       message: message.value,
       handle: handle.value
   });
+  // keeps the handle the same, but resets the value of the message
   message.value = "";
 });
 
